@@ -1,9 +1,8 @@
 import streamlit as st
-import pickle
+import joblib
 import numpy as np
 
-with open('model.pkl', 'rb') as rf:
-    model = pickle.load(rf)
+model=joblib.load("model.pkl")
 
 def predict(aqi):
     prediction = model.predict(aqi)
